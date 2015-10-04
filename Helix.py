@@ -11,7 +11,7 @@ def translate(vec, origin):
     vec[0] += origin[0]
     vec[1] += origin[1]
 
-# get the point in the curve, transform into integer and translate to the center 
+# get the point in the curve, transform into integer and translate to the center
 def format_point(param, center):
     point = curve(param)
     point = [int(point[0]), int(point[1])]
