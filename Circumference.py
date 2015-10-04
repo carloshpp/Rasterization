@@ -35,14 +35,6 @@ def parametric_rasterizarion(image, radius, center, color):
     image.save("parametric_circumference.png", "png")
     image.show()
 
-black_color = (0, 0, 0)
-white_color = (255, 255, 255)
-implicit_image = Image.new('RGB', (200, 200), black_color)
-parametric_image = Image.new('RGB', (200, 200), black_color)
-radius = 100
-center = [100, 100]
-implicit_rasterization(implicit_image, radius, center, white_color)
-parametric_rasterizarion(parametric_image, radius, center, white_color)
 
 
 
