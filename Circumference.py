@@ -51,7 +51,6 @@ def parametric_rasterizarion(image, radius, center, color):
         start = [center[0]+int(radius*cos(radians(t))), center[1]+int(radius*sin(radians(t)))]
         if int(radius*cos(radians(t))) < radius and radius*sin(radians(t)) < radius:
             image.putpixel(start, color)
-    print os.getcwd()
 
     image.save(os.getcwd()+"\Images\parametric_circumference.png", "png")
     image.show()
