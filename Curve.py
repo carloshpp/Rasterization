@@ -1,14 +1,13 @@
 __author__ = 'Kaike'
 
-from math     import *
-from PIL      import Image
+from math import *
 import os
 
 
 def format_point(point, image):
-    a = 4.0*point[0]/image.size[0] - 2.0
-    b = 4.0*point[1]/image.size[1] - 2.0
-    return pow(b,2)-pow(a,3)+a
+    x = 4.0*point[0]/image.size[0] - 2.0
+    y = 4.0*point[1]/image.size[1] - 2.0
+    return pow(y,2)-pow(x,3)+x
 
 
 def curve_rasterization(image, color):

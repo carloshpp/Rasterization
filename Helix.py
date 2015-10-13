@@ -4,6 +4,7 @@ from math import *
 from Bresenham import *
 import os
 
+
 def curve(t):
     return [t*cos(t), t*sin(t)]
 
@@ -30,7 +31,7 @@ def uniform_sample_with_bresenham(sample, center, image, color):
 def uniform_sample(sample, center, image, color):
     for k in range(0, 1000, 1):
         start = format_point(k*sample, center)
-        image.putpixel(start,color)
+        image.putpixel(start, color)
     image.save(os.getcwd()+"\Images\uniform_sample.png", "png")
     image.show()
 
@@ -39,12 +40,12 @@ def adaptive_sample_with_bresenham(center, image, color):
     space = 0.0
     while space < 100:
         # adaptive sample
-        sample = 1.0/sqrt(pow(cos(space) - space*sin(space),2)+pow(sin(space) + space*cos(space),2))
+        sample = 1.0/sqrt(pow(cos(space) - space*sin(space), 2)+pow(sin(space) + space*cos(space), 2))
         space += sample
         start = format_point(space, center)
         end = format_point(space+sample, center)
         # apply bresenham between start and end
-        approximate(start,end,image,color)
+        approximate(start, end, image, color)
     image.save(os.getcwd()+"\Images\\adaptive_sample_with_bresenham.png", "png")
     image.show()
 
@@ -53,7 +54,7 @@ def adaptive_sample(center, image, color):
     space = 0.0
     while space < 100:
         # adaptive sample
-        sample = 1.0/sqrt(pow(cos(space) - space*sin(space),2)+pow(sin(space) + space*cos(space),2))
+        sample = 1.0/sqrt(pow(cos(space) - space*sin(space), 2)+pow(sin(space) + space*cos(space), 2))
         space += sample
         start = format_point(space, center)
         image.putpixel(start, color)
